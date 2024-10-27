@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Image Gallery</title>
+
+        <script src="gallery.js" defer></script>
+
+        <link rel="stylesheet" href="mainStyles.css" />
+    </head>
+    <body>
+        <h1>Image Gallery</h1>
+        <div class="input-container">
+            <input type="file" id="imageFile" accept="image/*" />
+            <input
+                type="text"
+                id="imageName"
+                placeholder="Enter image name"
+            /><br />
+            <button id="addImage">Add Image</button>
+        </div>
+
+        <div class="filter-container">
+            <input type="text" id="filter" placeholder="Filter Image" />
+        </div>
+        <div class="photo-container">
+                <div class="photo-grid" id="gallery"></div>
+        </div>
+    </body>
+</html>

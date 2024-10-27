@@ -1,0 +1,85 @@
+/* Style for the body element */
+body {
+    background: rgb(19, 19, 19); /* Dark background color */
+    color: #fff; /* White text color for contrast */
+    font-family: "Courier New", Courier, monospace; /* Monospace font for a typewriter look */
+}
+
+h1 {
+    text-align: center;
+}
+
+.input-container {
+    padding-left: 20px;
+    text-align: center;
+}
+
+.filter-container {
+    padding-top: 20px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#addImage {
+    margin: 20px;
+}
+
+.photo-container{
+    margin:50px;
+}
+
+/* Style for the card element */
+.card {
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    background: #353535; /* Dark background color for the card */
+    font-size: 3rem; /* Large font size for the text */
+    color: #fff; /* White text color */
+    box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem,
+        /* Subtle shadow for depth */ rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem; /* Secondary shadow for more depth */
+    height: 100%; /* Full height of the container */
+    width: 100%; /* Full width of the container */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: all 500ms; /* Smooth transition for all changes */
+    overflow: hidden; /* Hide overflow to keep corners rounded */
+
+    background-size: cover; /* Ensure background image covers the entire card */
+    background-position: center; /* Center background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+}
+
+/* Style for the card element when hovered */
+.card:hover {
+    box-shadow: rgba(2, 8, 20, 0.1) 0px 0.35em 1.175em,
+        /* Larger shadow for hover effect */ rgba(2, 8, 20, 0.08) 0px 0.175em
+            0.5em; /* Secondary shadow for hover effect */
+    transform: translateY(-3px) scale(1.1); /* Slightly move up and scale card on hover */
+}
+
+/* Style for a responsive photo grid layout */
+.photo-grid {
+    display: grid; /* Use CSS Grid layout */
+    gap: 1rem; /* Space between grid items */
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(240px, 1fr)
+    ); /* Create flexible columns:
+       - auto-fit: Automatically fit columns into the grid
+       - minmax(240px, 1fr): Columns are at least 240px wide, but can expand to fill the available space */
+
+    grid-auto-rows: 240px; /* Set a default row height of 240px */
+}
+
+/* Media query for screens 600px wide and up */
+@media screen and (min-width: 600px) {
+    .card-tall {
+        grid-row: span 2 / auto; /* Make this item span 2 rows, useful for taller items */
+    }
+
+    .card-wide {
+        grid-column: span 2 / auto; /* Make this item span 2 columns, useful for wider items */
+    }
+}
