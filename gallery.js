@@ -55,6 +55,13 @@ document.getElementById("addImage").addEventListener("click", () => {
     }
 });
 
+// Delete all image when the user clicks it
+document.getElementById("deleteImage").addEventListener("click", () => {
+    localStorage.clear(); // Clear images from local storage
+    const gallery = document.getElementById("gallery");
+    gallery.innerHTML = ""; // Clear the gallery content
+});
+
 // Filter images as user types
 document.getElementById("filter").addEventListener("input", (e) => {
     loadImages(e.target.value); // Load images based on filter input
@@ -88,3 +95,6 @@ function getImages() {
 function saveImages(images) {
     localStorage.setItem("images", JSON.stringify(images)); // Save images to local storage
 }
+
+//! Removes all images from the gallery
+// localStorage.clear();
